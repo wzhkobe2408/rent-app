@@ -1,6 +1,11 @@
 <template>
   <div id="app">
-    <mt-header fixed title="Rent App"></mt-header>
+    <mt-header fixed title="Rent App">
+        <mt-button slot="left" @click="goBack" icon="back">back</mt-button>
+      <router-link to="/search" slot="right">
+        <mt-button icon="search"></mt-button>
+      </router-link>
+    </mt-header>
     <router-view/>
     <BottomTabber />
     <Popup v-if="showMessageBox" />
@@ -13,7 +18,7 @@ import './index.css'
 import BottomTabber from './components/BottomTabber'
 import Popup from './components/Popup'
 import BlackCover from './components/BlackCover'
-import { mapState } from 'vuex'
+import { mapState, mapActions } from 'vuex'
 
 export default {
   components: {
@@ -21,9 +26,18 @@ export default {
     Popup,
     BlackCover
   },
+  methods: {
+    ...mapActions([
+      'goBack'
+    ]),
+    goBack() {
+        this.$router.go(-1)
+    }
+  },
   computed: {
     ...mapState({
-      showMessageBox: state => state.showMessageBox
+      showMessageBox: state => state.showMessageBox,
+      checkGoBack: state => state.goBack
     })
   },
   name: 'App'

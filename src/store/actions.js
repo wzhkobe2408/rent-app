@@ -1,4 +1,7 @@
 export const MessageBox = ({ commit }, payload) => {
-  console.log(payload)
   commit('showMessageBox', payload)
+}
+
+export const goBack = ({ commit }, payload) => {
+  commit('checkGoBack', payload)
 }

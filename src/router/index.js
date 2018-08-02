@@ -4,6 +4,7 @@ import ListView from '@/components/ListView'
 import HomeDetail from '@/components/HomeDetail'
 import Form from '@/components/Form'
 import Profile from '@/components/Profile'
+import Search from '@/components/Search'
 
 Vue.use(Router)
 
@@ -25,6 +26,10 @@ export default new Router({
     {
       path: '/profile',
       component: Profile
+    },
+    {
+      path: '/search',
+      component: Search
     }
   ]
 })

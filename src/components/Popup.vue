@@ -23,7 +23,7 @@
 </script>
 <style scoped>
   .popup-container {
-    position: fixed;
+  position: fixed;    
     background: #ffffff;
     box-shadow: 1px 1px 6px rgba(0,0,0,0.1);
     border-radius: 4px;

@@ -1,5 +1,6 @@
 const state = {
-  showMessageBox: false
+  showMessageBox: false,
+  goBack: false
 }
 
 export default state

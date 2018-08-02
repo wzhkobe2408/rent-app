@@ -14,10 +14,10 @@
       <p><span>Bathrooms: </span>{{ data._source.bathrooms }}</p>
       <p><span>Bedrooms: </span>{{ data._source.bedrooms }}</p>
       <p><span>Location: </span>{{ data._source.location.lat.toFixed(2) }} , {{ data._source.location.lon.toFixed(2) }}</p>
-      <p><span>Bathrooms: </span>{{ data._source.bathrooms }}</p>
-      <p><span>Bedrooms: </span>{{ data._source.bedrooms }}</p>
-      <p><span>Bathrooms: </span>{{ data._source.bathrooms }}</p>
-      <p><span>Bedrooms: </span>{{ data._source.bedrooms }}</p>
+      <p><span>RoomType: </span>{{ data._source.room_type }}</p>
+      <p><span>PropertyType: </span>{{ data._source.property_type }}</p>
+      <p><span>Accommodates: </span>{{ data._source.accommodates }}</p>
+      <p style="color: #ff5100"><span>Price: </span>$ {{ data._source.price }}</p>
       <div class="display: flex">
       <mt-button :plain="true" style="width: 50%;float:left" type="default">Join</mt-button>
       <mt-button :plain="true" size="normal" style="width: 50%" type="default">Mark</mt-button>
