@@ -1,20 +1,22 @@
 <template>
-  <mt-tabbar v-model="selected" :fixed="true">
-    <mt-tab-item id="tab1">
-      <img slot="icon" v-on:click="toHome" src="../assets/100x100.png">
-      Home
-    </mt-tab-item>
-    <mt-tab-item id="tab2" >
-      <img slot="icon" v-on:click="toForm" src="../assets/100x100.png">
-      Add
-    </mt-tab-item>
-    <mt-tab-item id="tab3" >
-      <img slot="icon" v-on:click="toProfile" src="../assets/100x100.png" />
-      Me
-    </mt-tab-item>
-  </mt-tabbar>
+  <div class="bottom-tabbar" >
+    <div @click="toHome">
+      <font-awesome-icon icon="home" />
+      <div>Home</div>
+    </div>
+    <div @click="popUp">
+      <font-awesome-icon icon="plus" />
+      <div>Add</div>
+    </div>
+    <div @click="toProfile">
+      <font-awesome-icon icon="user" />
+      <div>Me</div>
+    </div>    
+  </div>
 </template>
 <script>
+  import { mapActions } from 'vuex'
+
   export default {
     data() {
       return {
@@ -22,8 +24,12 @@
       }
     },
     methods: {
-      toForm() {
-        this.$router.push('/form')
+      ...mapActions([
+        'MessageBox'
+      ]),
+      popUp() {
+        this.MessageBox(true)
+        // this.$router.push('/form')
       },
       toHome() {
         this.$router.push('/')        
@@ -34,3 +40,26 @@
     }
   }
 </script>
+<style scoped>
+  .bottom-tabbar {
+    display: flex;
+    justify-content: space-between;
+    position: fixed;
+    bottom: 0;
+    width: 100%;
+    z-index: 10;
+  }
+  .bottom-tabbar > div {
+      flex: 1;
+      text-align: center;
+      padding: 5px 0;
+      background: #e7e7e7;
+      border-right: 1px solid #d8d8d8;
+      cursor: pointer;
+  }
+  .bottom-tabbar > div:hover {
+    background: #ff5e00;
+    color: #fff;
+  }
+</style>
+

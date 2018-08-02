@@ -5,10 +5,12 @@
     </div>
     <div class="info-box">
       <h3 style="font-weight: 400">{{ data._source.name }}</h3>
+      <hr>
       <div style="display: flex">
         <img :src="data._source.host_image" >
         <p style="padding-left: 10px;margin: 0;">{{ data._source.host_name }}</p>
       </div>
+      <hr>
       <p><span>Bathrooms: </span>{{ data._source.bathrooms }}</p>
       <p><span>Bedrooms: </span>{{ data._source.bedrooms }}</p>
       <p><span>Location: </span>{{ data._source.location.lat.toFixed(2) }} , {{ data._source.location.lon.toFixed(2) }}</p>

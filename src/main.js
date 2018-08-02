@@ -3,8 +3,19 @@
 import Vue from 'vue'
 import { Header, Tabbar, TabItem, InfiniteScroll, Button, Field  } from 'mint-ui';
 import 'mint-ui/lib/style.css'
+
+import { library } from '@fortawesome/fontawesome-svg-core'
+import { faHome, faPlus, faUser } from '@fortawesome/free-solid-svg-icons'
+import { FontAwesomeIcon } from '@fortawesome/vue-fontawesome'
+
+library.add(faHome)
+library.add(faPlus)
+library.add(faUser)
+
+Vue.component('font-awesome-icon', FontAwesomeIcon)
 import App from './App'
 import router from './router'
+import store from './store/index';
 
 Vue.component('mt-header', Header);
 Vue.component('mt-tabbar', Tabbar);
@@ -20,6 +31,7 @@ Vue.config.productionTip = false
 new Vue({
   el: '#app',
   router,
+  store,
   components: { App },
   template: '<App/>'
 })

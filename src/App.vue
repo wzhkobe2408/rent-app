@@ -3,16 +3,28 @@
     <mt-header fixed title="Rent App"></mt-header>
     <router-view/>
     <BottomTabber />
+    <Popup v-if="showMessageBox" />
+    <BlackCover v-if="showMessageBox" />
   </div>
 </template>
 
 <script>
 import './index.css'
 import BottomTabber from './components/BottomTabber'
+import Popup from './components/Popup'
+import BlackCover from './components/BlackCover'
+import { mapState } from 'vuex'
 
 export default {
   components: {
-    BottomTabber
+    BottomTabber,
+    Popup,
+    BlackCover
+  },
+  computed: {
+    ...mapState({
+      showMessageBox: state => state.showMessageBox
+    })
   },
   name: 'App'
 }

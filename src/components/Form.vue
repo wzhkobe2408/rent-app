@@ -9,12 +9,14 @@
     <mt-field label="生日" placeholder="请输入生日" type="date" v-model="birthday"></mt-field>
     <mt-field label="自我介绍" placeholder="自我介绍" type="textarea" rows="4" v-model="introduction"></mt-field>
     <div style="display: flex;padding: 0 10px;justify-content: center">
-      <mt-button :plain="true" style="width: 50%;float:left" type="default">Join</mt-button>
+      <mt-button @click="handleSubmit" :plain="true" style="width: 50%;float:left" type="default">Join</mt-button>
       <mt-button :plain="true" size="normal" style="width: 50%" type="default">Mark</mt-button>
       </div>
   </div>  
 </template>
 <script>
+  import axios from 'axios';
+
   export default {
     data() {
       return {
@@ -26,6 +28,24 @@
         website: '',
         number: 0,
         introduction: ''
+      }
+    },
+    methods: {
+      handleSubmit() {
+        alert('test')
+        // axios.post('/homes', {
+        //   // all the fields
+        //   firstName: 'Fred',
+        //   lastName: 'Flintstone'
+        // })
+        // .then(response => {
+        //   console.log(response)
+        //   // back to home page
+        //   this.$router.push('/')
+        // })
+        // .catch(error => {
+        //   console.log(error)
+        // })
       }
     }
   }
