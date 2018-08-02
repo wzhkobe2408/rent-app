@@ -35,6 +35,7 @@
         this.$router.push('/')        
       },
       toProfile() {
+        // 判断是否是登录状态
         this.$router.push('/profile')
       }
     }

@@ -5,6 +5,8 @@ import HomeDetail from '@/components/HomeDetail'
 import Form from '@/components/Form'
 import Profile from '@/components/Profile'
 import Search from '@/components/Search'
+import Login from '@/components/Login'
+import Signup from '@/components/Signup'
 
 Vue.use(Router)
 
@@ -30,6 +32,12 @@ export default new Router({
     {
       path: '/search',
       component: Search
+    }, {
+      path: '/login',
+      component: Login
+    }, {
+      path: '/signup',
+      component: Signup
     }
   ]
 })

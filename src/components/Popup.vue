@@ -31,7 +31,7 @@
     left: 50%;
     transform: translate(-50%, -50%);
     width: 80%;
-    z-index: 10;
+    z-index: 101;
   }
   .popup-header {
     text-align: center;
